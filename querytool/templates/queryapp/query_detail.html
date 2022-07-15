@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h3>{{ query.name }}</h3>
+
+  <p><strong>CUI:</strong> <a href="">{{ query.cui.all.0 }}</a></p> <!-- author detail link not yet defined -->
+
+<!--
+{% for t in query.link.all %}
+      <li>
+        <a href="{% url 'index' %}">{{ t.tui.0 }}</a>
+      </li>
+      {% endfor %}
+-->
+
+<!--
+{% for i in lst %}
+      <li>
+          {{ i.0 }}, {{ i.1 }}
+      </li>
+      {% endfor %}
+-->
+ <form action="" method="post">
+        {% csrf_token %}
+        <table>
+        {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}

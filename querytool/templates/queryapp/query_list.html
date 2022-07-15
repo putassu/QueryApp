@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Ваши запросы</h1>
+
+    {% if query_list %}
+    <ul>
+
+      {% for query in query_list %}
+      <li>
+        <a href="{{ query.get_absolute_url }}">{{ query.name }}</a> (id={{ query.id }})
+      </li>
+      {% endfor %}
+        <li><a href="{% url 'new-query' %}">Новый запрос</a></li>
+    </ul>
+    {% else %}
+      <p>Вы ещё не делали никаких запросов. Предлагаю это исправить).</p>
+        <p><a href="{% url 'new-query' %}">Новый запрос</a></p>
+    {% endif %} 
+{% endblock %}

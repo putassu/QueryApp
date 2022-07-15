@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Главная страница</h1>
+
+  <p>Добро пожаловать в конструктор запросов <em>Query App</em>, дата: {{ current_date }}</p>
+
+<h2>Статистика</h2>
+
+  <p>На сегодняшний день у вас({{ us.username }}):</p>
+  <ul>
+    <li class='text-warning'><a href="{% url 'queries' %}"><strong>Запросов:</strong></a> {{ num_queries }}</li>
+    <li class='text-warning'><a href="{% url 'new-query' %}"><strong>Новый запрос:</strong></a></li>
+  </ul>
+<!-- <p>Номер посещения страницы: {{ count_visits }}</p>-->
+{% endblock %}
